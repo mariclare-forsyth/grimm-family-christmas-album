@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Grimm Family Christmas Album</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fafafa;color:#222;font:16px/1.55 Arial,sans-serif}header{background:#fff;border-bottom:1px solid #ddd;padding:55px 20px 45px}.hero,main{max-width:820px;margin:auto}.hero h1{font:500 clamp(2.3rem,7vw,4rem)/1.05 Georgia,serif;margin:0 0 24px}.lead{font-size:1.08rem;line-height:1.7;margin:0 0 14px}.wrap{padding:32px 18px 60px}.notice{background:#f3f3f3;border-left:4px solid #222;padding:15px 17px;margin-bottom:18px}.card{background:#fff;border:1px solid #ddd;border-radius:9px;padding:25px;margin-bottom:18px}.card h2{font:500 1.55rem Georgia,serif;margin:0 0 6px}.sub{color:#666;margin:0 0 18px}.field{display:grid;gap:7px;font-weight:600;margin-bottom:16px}input[type=text],textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font:inherit}.options{display:grid;gap:9px}.choice,.song{display:flex;gap:10px;align-items:flex-start;border:1px solid #ddd;border-radius:7px;padding:11px;cursor:pointer;background:#fff}.choice input,.song input{margin-top:5px}.choice:has(input:checked),.song:has(input:checked){background:#f0f0f0;border-color:#aaa}.songlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button{border:0;border-radius:6px;padding:13px 20px;font:inherit;font-weight:bold;cursor:pointer}.primary{background:#222;color:#fff}.secondary{background:#eee;color:#222}#status{display:none;background:#eee;padding:13px;margin-top:14px;border-radius:6px}.small{font-size:.88rem;color:#666}@media(max-width:600px){.songlist{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="hero"><h1>Grimm Family Christmas Album!</h1>
+<p class="lead">We've been saying it for years...if not now, when? If not us, who? Let's put our best effort to making this album a gift for our family and the world.</p>
+<p class="lead">Please respond for each person coming, with the date that is best for you and the songs that you know well. It will require some practice on your own, an in person practice and commitment on the day of recording, but it will be worth it.</p></div></header>
+<main class="wrap"><div class="notice"><strong>Please fill this out separately for each person coming.</strong></div>
+<form id="f">
+<section class="card"><h2>Who are you?</h2><p class="sub">One response per person.</p><label class="field">Name *<input name="name" required placeholder="First and last name"></label></section>
+<section class="card"><h2>Which recording date works best for you?</h2><p class="sub">Time TBD. Choose the one date that is best for you.</p><div class="options">
+<label class="choice"><input type="radio" name="date" value="1/2/27" required>1/2/27</label>
+<label class="choice"><input type="radio" name="date" value="1/3/27">1/3/27</label>
+<label class="choice"><input type="radio" name="date" value="Neither">Neither</label></div></section>
+<section class="card"><h2>Which songs do you know well?</h2><p class="sub">Check all that you know well enough to sing with the group.</p><div class="songlist">
+<label class="song"><input type="checkbox" name="songs" value="Psallite">Psallite</label><label class="song"><input type="checkbox" name="songs" value="Hodie Christian Natus Est (all men)">Hodie Christian Natus Est (all men)</label><label class="song"><input type="checkbox" name="songs" value="En Natus est Emmanuel">En Natus est Emmanuel</label><label class="song"><input type="checkbox" name="songs" value="Lo How a Rose">Lo How a Rose</label><label class="song"><input type="checkbox" name="songs" value="Coventry Carol">Coventry Carol</label><label class="song"><input type="checkbox" name="songs" value="Uncle Stephen's Tolkien Christmas carol">Uncle Stephen's Tolkien Christmas carol</label><label class="song"><input type="checkbox" name="songs" value="Mary Had a Baby">Mary Had a Baby</label><label class="song"><input type="checkbox" name="songs" value="Carol of the Bells">Carol of the Bells</label><label class="song"><input type="checkbox" name="songs" value="Alle Psallite">Alle Psallite</label><label class="song"><input type="checkbox" name="songs" value="Carol of the Russian Children">Carol of the Russian Children</label><label class="song"><input type="checkbox" name="songs" value="In Natali Domini (Praetorius)">In Natali Domini (Praetorius)</label><label class="song"><input type="checkbox" name="songs" value="Riu Riu Chiu">Riu Riu Chiu</label><label class="song"><input type="checkbox" name="songs" value="The Angel Gabriel">The Angel Gabriel</label><label class="song"><input type="checkbox" name="songs" value="O Magnum Mysterium (Vittoria)">O Magnum Mysterium (Vittoria)</label><label class="song"><input type="checkbox" name="songs" value="O Magnum Mysterium (Lauridsen)">O Magnum Mysterium (Lauridsen)</label><label class="song"><input type="checkbox" name="songs" value="Ding Dong Merrily on High">Ding Dong Merrily on High</label><label class="song"><input type="checkbox" name="songs" value="Ye Clouds of Heaven">Ye Clouds of Heaven</label><label class="song"><input type="checkbox" name="songs" value="In Dulce Jubilo">In Dulce Jubilo</label><label class="song"><input type="checkbox" name="songs" value="Pat-a-pan">Pat-a-pan</label>
+</div><label class="field" style="margin-top:18px">Any we missed?<textarea name="missed" rows="3"></textarea></label></section>
+<section class="card"><h2>What voice part are you?</h2><p class="sub">Choose your usual voice part.</p><div class="options">
+<label class="choice"><input type="radio" name="voice" value="Soprano" required>Soprano</label>
+<label class="choice"><input type="radio" name="voice" value="Alto">Alto</label>
+<label class="choice"><input type="radio" name="voice" value="Tenor">Tenor</label>
+<label class="choice"><input type="radio" name="voice" value="Bass">Bass</label></div></section>
+<section class="card"><h2>Anything else?</h2><p class="sub">Optional notes or questions.</p><textarea name="notes" rows="4"></textarea><div class="actions"><button class="primary">Submit Response</button><button class="secondary" type="button" id="x">Export Responses</button></div><div id="status"></div><p class="small">Responses are submitted to the shared online Google Sheet.</p></section>
+</form></main>
+<script>
+/*
+  PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BETWEEN THE QUOTES BELOW.
+  Example:
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/XXXXXXXX/exec";
+*/
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxcZTHbiSQjt1wMsYpMgXuD9Svmnpazr7NxaEFJbrhx4ub85_pkywPb3Lnze8FNt3M/exec";
+
+const f = document.getElementById("f");
+const st = document.getElementById("status");
+const exportButton = document.getElementById("x");
+
+f.onsubmit = async (e) => {
+  e.preventDefault();
+
+  if (!SHEET_ENDPOINT) {
+    st.style.display = "block";
+    st.textContent = "The online response sheet has not been connected yet. Please add the Google Apps Script Web App URL.";
+    return;
+  }
+
+  const d = new FormData(f);
+  const payload = {
+    name: d.get("name"),
+    date: d.get("date"),
+    songs: d.getAll("songs"),
+    missed: d.get("missed") || "",
+    voice: d.get("voice"),
+    notes: d.get("notes") || ""
+  };
+
+  const submitButton = f.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
+
+  try {
+    await fetch(SHEET_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type": "text/plain;charset=utf-8"},
+      body: JSON.stringify(payload)
+    });
+
+    st.style.display = "block";
+    st.textContent = "Thank you, " + payload.name + ". Your response has been submitted.";
+    f.reset();
+  } catch (err) {
+    st.style.display = "block";
+    st.textContent = "Sorry, your response could not be submitted. Please try again.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit Response";
+  }
+};
+
+/*
+  Export is retained as a convenience for any locally saved data from
+  the older version. The new online version does not store submissions
+  in the browser.
+*/
+exportButton.onclick = () => {
+  st.style.display = "block";
+  st.textContent = "Responses are now stored in the shared Google Sheet. Use the Sheet itself to view or export them.";
+};
+</script></body></html>
